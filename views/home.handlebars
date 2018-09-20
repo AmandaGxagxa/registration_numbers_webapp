@@ -1,39 +1,55 @@
 <div class="container">
-  <div class="card text-center">
+  <div class="center">
     <h1>Registration web Application</h1>
   </div>
 
 
-  <div class="box">
-    <form action="/registration" method="POST">
-      <div class="row">
-        <input type="text" placeholder="CA 111-111" name="names">
-        <button type="submit" class="button-primary btn2" name="button">Add</button>
+  <div class="box ">
+    <form class="center" action="/registration" method="POST">
+      <div class="form-row align-items-center">
+        <div class="input-group mb-3 ">
+          <span class="input-group-text input-group-prepend" id="inputGroup-sizing-default">Reg Number</span>
+          <input type="text" class="form-control input" aria-label="Sizing example input" placeholder="CA 111-111" name="names" aria-describedby="inputGroup-sizing-default">
+        </div>
+        
+        <div class="error">
+        {{#if messages.info}}
+        <span class="err">{{messages.info}}</span>
+        {{/if}}
+        </div>
+        <br>
+        <div>
+        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="button" class="primary btn_reset2" name="button">Clear</button>
+        </div>
+      </div>
     </form>
-    <button type="button" class="button-primary btn_reset2" name="button">Clear</button>
+    
     <br>
-    <label class="errorMsg1" for=""></label>
-    </div>
-    <div class="row">
-      <div class="towns2">
-        <h5>SELECT BY TOWN</h5>
-        <hr>
-        <select class="dropDown2" name="selectTwn">
-          <option class="dropDowns2" value="All">All</option>
-          <option class="dropDowns2" value="CA ">Cape Town</option>
-          <option class="dropDowns2" value="CY">Bellville</option>
-          <option class="dropDowns2" value="CJ">Paarl</option>
-          <option class="dropDowns2" value="CL">Stellenbosch</option>
-          <option class="dropDowns2" value="CK">Malmesbury</option>
-          <option class="dropDowns2" value="CAW">George</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="regNum2">
-        {{regNums}}
-      </div>
-    </div>
-
 
   </div>
+  <div class="last">
+    <div class="towns2">
+      <h5>SELECT BY TOWN</h5>
+      <hr>
+      <select class="dropDown2" name="selectTwn">
+        <option class="dropDowns2" value="All">All</option>
+        <option class="dropDowns2" value="CA ">Cape Town</option>
+        <option class="dropDowns2" value="CY">Bellville</option>
+        <option class="dropDowns2" value="CJ">Paarl</option>
+        <option class="dropDowns2" value="CL">Stellenbosch</option>
+        <option class="dropDowns2" value="CK">Malmesbury</option>
+        <option class="dropDowns2" value="CAW">George</option>
+      </select>
+    </div>
+ </div>
+  <div class="veza">
+    <div class="regNum2">
+      {{#each display}}
+      <span class="display">{{num_plates}}</span>
+      {{/each}}
+    </div>
+  </div>
+ </div>
+
+</div>
