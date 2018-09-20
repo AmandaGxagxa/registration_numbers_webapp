@@ -5,7 +5,7 @@ module.exports = function (regServices) {
 async function toHomePage(req, res, next){
   try {
     let display = await regServices.numberPlates();
-    console.log(display)
+    // console.log(display)
 
     res.render('home',{display})
   } catch (error) {
@@ -24,12 +24,13 @@ async function insertFunc(req, res, next){
       let split = getReg.split(" ");
       let holdInit = split[0];
       let addinitial = await regServices.getTown(holdInit);
+      
       if(addinitial.length == 0){
         req.flash('info', 'Please enter a valid registration number!');
       }else {
-        let addplates = await regServices.addPlates(getReg, addinitial[0].id);
+      let addplates = await regServices.addPlates(getReg, addinitial[0].id);
       let display = await regServices.numberPlates();
-      console.log(addinitial)
+      console.log(display)
       res.render('home', {addinitial,display})
       }
       
