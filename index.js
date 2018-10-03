@@ -41,12 +41,12 @@ app.use(session({
 app.use(flash())
 // initialise the flash middleware
 
-app.get("/",registrations.toHomePage)
-app.post('/registration',registrations.insertFunc)
-
+app.get("/",registrations.toHomePage);
+app.post('/registration',registrations.insertFunc);
+app.get('/:filtered', registrations.filter)
   
 
-let PORT = process.env.PORT || 3008 
+let PORT = process.env.PORT || 3008;
 
 app.listen(PORT, function(){
   console.log('App starting on port', PORT);

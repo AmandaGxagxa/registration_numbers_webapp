@@ -3,10 +3,10 @@ module.exports = function (pool) {
         const results = await pool.query('select * from registrations')
         return results.rows;
     }
-    async function filterByTown(towns) {
-        const results = await pool.query('select * from registrations where num_plates LIKE $1',['%'+ towns +' %']);
-       return results.rows;
-    }
+    // async function filterByTown(towns) {
+    //     const results = await pool.query('select * from registrations where num_plates LIKE $1',['%'+ towns +' %']);
+    //    return results.rows;
+    // }
     async function getTown(town) {
         const results = await pool.query('select * from townnames where init_town = $1', [town]);
        return results.rows;
@@ -26,6 +26,18 @@ module.exports = function (pool) {
         else{
             await insertPlates(regNum,id);
             return true;
+        }
+
+    }
+    async function filterByTown(towns){
+        let results = [];
+        if(towns == 'All'){
+        results = await pool.query('select num_plates from registrations');
+        return results.rows;
+        }
+        else{
+         results = await pool.query('select num_plates from townnames join registrations on registrations.town_id=townnames.id where init_town=$1',[towns])
+            return results.rows;
         }
     }
     return {

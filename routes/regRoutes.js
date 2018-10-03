@@ -30,7 +30,6 @@ async function insertFunc(req, res, next){
       }else {
       let addplates = await regServices.addPlates(getReg, addinitial[0].id);
       let display = await regServices.numberPlates();
-      console.log(display)
       res.render('home', {addinitial,display})
       }
       
@@ -40,14 +39,24 @@ async function insertFunc(req, res, next){
     next(error)
   }
 }
+async function  filter(req,res,next){
+  try{
+    let townFilter = req.params.filtered;
+    let display = await regServices.filterByTown(townFilter);
+    console.log(display)
+    res.render('home', {display })
 
-  // let getReg = req.body.names;
-
+  }
+  catch(err){
+    next(err);
+  }
+}
   
 
   return{
     toHomePage,
-    insertFunc
+    insertFunc,
+    filter
   }
   
 }

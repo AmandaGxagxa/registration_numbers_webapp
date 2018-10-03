@@ -36,10 +36,6 @@ form{
 button{
     width: 500px;
     padding: 20px;
-    margin: auto;
+    margin: 3px;
     /* margin: auto; */
-}
-.dropDown2{
-    width: 300px;
-    margin: auto;
 }
