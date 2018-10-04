@@ -44,7 +44,7 @@ app.use(flash())
 app.get("/",registrations.toHomePage);
 app.post('/registration',registrations.insertFunc);
 app.get('/:filtered', registrations.filter)
-app.get('/reset', registrations.resert);
+app.get('/registration/reset', registrations.resert);
   
 
 let PORT = process.env.PORT || 3008;

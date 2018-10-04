@@ -1,12 +1,12 @@
-<div class="container">
-  <div class="center">
+
+  <div class="container">
+
+  
     <h1>Registration web Application</h1>
-  </div>
-
-
-  <div class="box ">
-    <form class="center" action="/registration" method="POST">
-      <div class="form-row align-items-center">
+  
+    <form class="center"  action="/registration" method="POST">
+    
+      {{!-- <div class="form-row align-items-center"> --}}
         <div class="input-group mb-3 ">
           <span class="input-group-text input-group-prepend" id="inputGroup-sizing-default">Reg Number</span>
           <input type="text" class="form-control input" aria-label="Sizing example input" pattern='[A-Z]{2,3}\s\d{3}\W\d{3}|[A-Z]{2,3}\s\d{3,6}'title="Please add the right format eg CA 1425" placeholder="CA 111-111" name="names" aria-describedby="inputGroup-sizing-default">
@@ -18,20 +18,21 @@
           {{/if}}
         </div>
         <br>
-        <div>
-          <button type="submit" class="btn btn-primary btn-lg">Add</button>
-<a href="/reset"> <button type="button" pattern='[A-Z]{2,3}\s\d{3}\W\d{3}|[A-Z]{2,3}\s\d{3,6}'title="this will delete all you registratio numbers" class="btn btn-danger btn-lg reset" name="submit">reset</button></a>
+        
+        <div class="row ">
+          <button type="submit" class="btn btn-primary form-control col-6">Add</button>
+<a href="/registration/reset" type="button" title="this will delete all you registratio numbers" class="btn btn-danger form-control col-6" name="button">reset</a>
+
       </div>
    
 
     <br>
 
-  </div>
-  <div class="last">
+  {{!-- </div> --}}
     <div class="towns2">
       <h5>SELECT BY TOWN</h5>
       <hr>
-      <div class="dropdown" class="form-control">
+      <div class="dropdown">
         <button class="btn btn-primary dropdown-toggle" type="menu" data-toggle="dropdown">All Towns
           <span class="caret"></span>
         </button>
@@ -59,9 +60,10 @@
           </li>
         </ul>
       </div>
-
 </div>
- </form>
+    </form>
+
+
 <hr>
 <div class="veza">
   <div class="regNum2">
@@ -72,4 +74,3 @@
 </div>
 </div>
 
-</div>

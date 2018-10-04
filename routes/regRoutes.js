@@ -13,7 +13,7 @@ async function toHomePage(req, res, next){
   }
 }
 async function resert (req, res) {
-  await pool.query('delete from registration');
+  await regServices.reset();
   res.redirect('/');
 }
 async function insertFunc(req, res, next){
