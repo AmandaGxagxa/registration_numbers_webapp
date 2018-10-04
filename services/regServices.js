@@ -40,12 +40,16 @@ module.exports = function (pool) {
             return results.rows;
         }
     }
+    async function reset () {
+        await pool.query('delete from registrations');
+    }
     return {
         numberPlates,
         filterByTown,
         getTown,
         getPlates,
         addPlates,
-        insertPlates
+        insertPlates,
+        reset
     }
 }

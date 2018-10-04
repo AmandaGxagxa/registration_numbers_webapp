@@ -12,6 +12,10 @@ async function toHomePage(req, res, next){
     next(error.stack)
   }
 }
+async function resert (req, res) {
+  await pool.query('delete from registration');
+  res.redirect('/');
+}
 async function insertFunc(req, res, next){
   try {
     let getReg = req.body.names;
@@ -56,7 +60,8 @@ async function  filter(req,res,next){
   return{
     toHomePage,
     insertFunc,
-    filter
+    filter,
+    resert
   }
   
 }
