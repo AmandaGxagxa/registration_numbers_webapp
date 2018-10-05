@@ -1,2 +1,2 @@
-# registration_numbers_webapp.
-[![Build Status](https://travis-ci.org/AmandaGxagxa/registration_numbers_webapp..svg?branch=master)](https://travis-ci.org/AmandaGxagxa/registration_numbers_webapp.)
+# registration_numbers_webapp
+[![Build Status](https://travis-ci.org/AmandaGxagxa/registration_numbers_webapp.svg?branch=master)](https://travis-ci.org/AmandaGxagxa/registration_numbers_webapp)
