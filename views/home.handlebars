@@ -1,33 +1,33 @@
+<div class="container">
 
-  <div class="container">
 
-  
-    <h1>Registration web Application</h1>
-  
-      <form method="post" action="/registration" >
-      {{!-- <div class="form-row align-items-center"> --}}
-        <div class="input-group mb-3 ">
-          <span class="input-group-text input-group-prepend" id="inputGroup-sizing-default">Reg Number</span>
-          <input type="text" class="form-control input" aria-label="Sizing example input" pattern='[A-Z]{2,3}\s\d{3}\W\d{3}|[A-Z]{2,3}\s\d{3,6}'title="Please add the right format eg CA 1425" placeholder="CA 111-111" name="names" aria-describedby="inputGroup-sizing-default">
-        </div>
+  <h1>Registration web Application</h1>
 
-        <div class="error">
-          {{#if messages.info}}
-          <span class="err">{{messages.info}}</span>
-          {{/if}}
-        </div>
-        <br>
-        
-        <div class="row ">
-          <button type="submit" class="btn btn-primary form-control col-6">Add</button>
-<a href="/registration/reset" title="this will delete all you registratio numbers" class="btn btn-danger form-control col-6" name="button">reset</a>
+  <form method="post" action="/registration">
+    {{!--
+    <div class="form-row align-items-center"> --}}
+      <div class="input-group mb-3 ">
+        <span class="input-group-text input-group-prepend" id="inputGroup-sizing-default">Reg Number</span>
+        <input type="text" class="form-control input" aria-label="Sizing example input" pattern='[A-Z]{2,3}\s\d{3}\W\d{3}|[A-Z]{2,3}\s\d{3,6}'
+          title="Please add the right format eg CA 1425" placeholder="CA 111-111" name="names" aria-describedby="inputGroup-sizing-default">
+      </div>
+
+      <div class="error">
+        {{#if messages.info}}
+        <span class="err">{{messages.info}}</span>
+        {{/if}}
+      </div>
+      <br>
+
+      <div class="row buttons">
+        <button type="submit" class="btn btn-primary  col-2">Add</button>
+        <a href="/registration/reset" title="this will delete all you registratio numbers" class="btn btn-danger col-2"
+          name="button">reset</a>
 
       </div>
-   
 
-    <br>
 
-  {{!-- </div> --}}
+      <br> {{!-- </div> --}}
     <div class="towns2">
       <h5>SELECT BY TOWN</h5>
       <hr>
@@ -59,17 +59,27 @@
           </li>
         </ul>
       </div>
-</div>
-    </form>
+
+      {{!-- <div class="form-group">
+        <label for="exampleFormControlSelect1">Example select</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>All</option>
+          <option>Cape Town</option>
+          <option>Paarl</option>
+          <option>George</option>
+          <option>Malmersbury</option>
+        </select>
+      </div> --}}
+    </div>
+  </form>
 
 
-<hr>
-<div class="veza">
-  <div class="regNum2">
-    {{#each display}}
-    <span class="display">{{num_plates}}</span>
-    {{/each}}
+  <hr>
+  <div class="veza">
+    <div class="regNum2">
+      {{#each display}}
+      <div class="display">{{num_plates}}</div>
+      {{/each}}
+    </div>
   </div>
 </div>
-</div>
-

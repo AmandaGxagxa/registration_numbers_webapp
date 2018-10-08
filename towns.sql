@@ -14,6 +14,7 @@ CREATE TABLE registrations(
 insert into townnames(town_name,init_town) values('Cape Town', 'CA');
 insert into townnames(town_name,init_town) values('Bellville', 'CY');
 insert into townnames(town_name,init_town) values('Paarl', 'CJ');
-insert into townnames(town_name,init_town) values('Stellenbotch', 'CK');
+insert into townnames(town_name,init_town) values('Stellenbosch', 'CL');
+insert into townnames(town_name,init_town) values('Malmesbury', 'CK');
 insert into townnames(town_name,init_town) values('George', 'CAW');
 insert into townnames(town_name,init_town) values('All',' All');

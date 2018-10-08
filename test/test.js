@@ -21,6 +21,12 @@ describe('The basic database web app', function () {
         await pool.query('delete from registrations');
     });
 
+    // it('Should add valid registrations and return a list of registrations', async function() {
+    //     const registrations = Registrations(pool);
+    //     await registrations.addPlates('CA 123 123',1)
+
+    // })
+
     it('should be able to give all added registrations ', async function () {
         // the Factory Function is called CategoryService
         const registrations = Registrations(pool);

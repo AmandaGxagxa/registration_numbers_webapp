@@ -7,16 +7,25 @@ module.exports = function (pool) {
     //     const results = await pool.query('select * from registrations where num_plates LIKE $1',['%'+ towns +' %']);
     //    return results.rows;
     // }
+
     async function getTown(town) {
         const results = await pool.query('select * from townnames where init_town = $1', [town]);
-       return results.rows;
+        return results.rows;
     }
+
+    // async function isValidTown(town) {
+    //     const results = await pool.query('select * from townnames where init_town = $1', [town]);
+    //     return results.rows.length > 0;
+    // }
+
     async function getPlates(plate) {
         const results = await pool.query('select * from registrations where num_plates = $1',[plate])
         return results.rows;
     }
     async function insertPlates(regNum, locID) {
-        await pool.query('insert into registrations (num_plates,town_id)values($1,$2)',[regNum, locID])
+
+         await pool.query('insert into registrations (num_plates,town_id)values($1,$2)',[regNum, locID])
+    
     }
     async function addPlates(regNum, id) {
         let results = await getPlates(regNum);
@@ -42,7 +51,16 @@ module.exports = function (pool) {
     }
     async function reset () {
         await pool.query('delete from registrations');
+
     }
+
+    async function InvalidChecker(matchReg) {
+        let result = await pool.query('Select init_town from townnames where init_town=$1', ['matchReg']);
+        return result.rows;
+        console.log(result.rows)
+
+    }
+
     return {
         numberPlates,
         filterByTown,
@@ -50,6 +68,6 @@ module.exports = function (pool) {
         getPlates,
         addPlates,
         insertPlates,
-        reset
+        reset, InvalidChecker
     }
 }

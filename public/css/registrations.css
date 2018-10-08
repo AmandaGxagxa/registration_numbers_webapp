@@ -5,12 +5,18 @@ body{
     text-align: center;
     
 }
+.buttons{
+    margin-left: 50px;
+}
 h1{
     background-color: sienna;
      font-weight: bolder; 
      width: 100%;
 }
-
+/* span{
+    height: 20px;
+    width: 100px;
+} */
 a{
     border: 1px solid white;
     border-radius: 5px;
@@ -21,11 +27,15 @@ a{
     
 }
 .display{
-    border: 2px solid black;
+    border: 3px solid black;
     border-radius: 5px;
     background-color: rgb(218, 73, 21);
     font-weight: bolder;
-    
+    font-size: 1em;
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
+    display:inline-block;
 }
 .err{
     color: crimson;
