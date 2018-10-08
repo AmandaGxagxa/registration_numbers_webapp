@@ -3,23 +3,25 @@
 }
 body{
     text-align: center;
+    margin: auto;
     
 }
 .buttons{
-    margin-left: 50px;
+    margin-left: 70px;
 }
 h1{
     background-color: sienna;
      font-weight: bolder; 
      width: 100%;
 }
-/* span{
-    height: 20px;
-    width: 100px;
-} */
+
 a{
     border: 1px solid white;
     border-radius: 5px;
+}
+.btn{
+    margin: 5px;
+    font-weight:bold;
 }
  form{
      margin:auto;
@@ -42,4 +44,10 @@ a{
     text-align: center;
     font-weight: bolder;
     margin-bottom: 2em;
+}
+li{
+    margin: auto;
+    font-weight: bold;
+    color:blue;
+    text-align: center;
 }
