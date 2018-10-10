@@ -4,9 +4,7 @@
   <h1>Registration web Application</h1>
 
   <form method="post" action="/registration">
-    {{!--
-    <div class="form-row align-items-center"> --}}
-      <div class="input-group mb-3 ">
+      <div class="input-group col-4 ">
         <span class="input-group-text input-group-prepend" id="inputGroup-sizing-default">Reg Number</span>
         <input type="text" class="form-control input" aria-label="Sizing example input" pattern='[A-Z]{2,3}\s\d{3}\W\d{3}|[A-Z]{2,3}\s\d{3,6}'
           title="Please add the right format eg CA 1425" placeholder="CA 111-111" name="names" aria-describedby="inputGroup-sizing-default">
@@ -18,16 +16,10 @@
         {{/if}}
       </div>
       <br>
-
-      {{!-- <div class="row buttons"> --}}
         <button type="submit" class="btn btn-primary  ">Add</button>
         <a href="/registration/reset" title="this will delete all you registratio numbers" class="btn btn-danger"
           name="button">Reset</a>
-
-      {{!-- </div> --}}
-
-
-      <br> {{!-- </div> --}}
+      <br>
     <div class="towns2">
       <h5>SELECT BY TOWN</h5>
       <hr>
@@ -60,16 +52,6 @@
         </ul>
       </div>
 
-      {{!-- <div class="form-group">
-        <label for="exampleFormControlSelect1">Example select</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-          <option>All</option>
-          <option>Cape Town</option>
-          <option>Paarl</option>
-          <option>George</option>
-          <option>Malmersbury</option>
-        </select>
-      </div> --}}
     </div>
   </form>
 
