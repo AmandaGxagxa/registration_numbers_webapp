@@ -6,7 +6,7 @@
   <form method="post" action="/registration">
       <div class="input-group col-4 ">
         <span class="input-group-text input-group-prepend" id="inputGroup-sizing-default">Reg Number</span>
-        <input type="text" class="form-control input" aria-label="Sizing example input" pattern='[A-Z]{2,3}\s\d{3}\W\d{3}|[A-Z]{2,3}\s\d{3,6}'
+        <input type="text" class="form-control input col-12" aria-label="Sizing example input" pattern='[A-Z]{2,3}\s\d{3}\W\d{3}|[A-Z]{2,3}\s\d{3,6}'
           title="Please add the right format eg CA 1425" placeholder="CA 111-111" name="names" aria-describedby="inputGroup-sizing-default">
       </div>
 
@@ -21,8 +21,9 @@
           name="button">Reset</a>
       <br>
     <div class="towns2">
-      <h5>SELECT BY TOWN</h5>
       <hr>
+      <h5>SELECT BY TOWN</h5>
+    
       <div class="dropdown">
         <button class="btn btn-primary dropdown-toggle" type="menu" data-toggle="dropdown">All Towns
           <span class="caret"></span>
