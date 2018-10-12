@@ -2,7 +2,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const Registrations = require('./routes/regRoutes');
-const regservice = require('./services/regServices')
+const Regservice = require('./services/regServices')
 const postgres = require('pg')
 const Pool = postgres.Pool
 // const routs = require('./routes/greetings');
@@ -24,7 +24,7 @@ const pool = new Pool({
     ssl: useSSL
 });
 
-const reg = regservice(pool)
+const reg = Regservice(pool)
 const registrations = Registrations(reg);
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -43,7 +43,7 @@ app.use(flash())
 
 app.get("/",registrations.toHomePage);
 app.post('/registration',registrations.insertFunc);
-app.get('/:filtered', registrations.filter)
+app.get('/filter/:filtered', registrations.filter)
 app.get('/registration/reset', registrations.resert);
   
 
